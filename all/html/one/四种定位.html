@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+            /* 相对定位 position: relative;
+                相对于自身当前所在位置为坐标，进行定位
+                位置改变后，原先的位置会保留，继续占用
+             */
+            position: relative;
+            top: 50px;
+            left: 50px;
+        }
+        
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: #ffa;
+        }
+        
+        .box3 {
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+            position: relative;
+        }
+        
+        .box4 {
+            height: 100px;
+            width: 100px;
+            background-color: red;
+            /* 绝对定位 position: absolute;
+                相对于最近一级的而且开启了定位的祖先元素定位
+                绝对定位是脱离文档流的
+                位置改变后，原先的位置不会保留
+            */
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+        /* 
+            页面布局时，定位的使用口诀：
+                子绝父相：子级使用绝对定位，父级则需要相对定位
+                问：为什么要给父元素设置相对定位？可以设置成绝对定位吗？
+                答：子元素设置绝对定位是为了根据父元素进行更好的定位布局，如果父元素设置了绝对定位，那么父元素会脱离文档流，从而导致下方其他的元素位置错乱，使整体布局发生改变。而相对定位则不会脱离文档流，虽然位置发生改变，但原先的位置会保留占用，因此，父元素使用相对定位。
+        */
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <br>
+    <br>
+
+    <div class="box3">
+        <div class="box4"></div>
+    </div>
+</body>
+
+</html>
