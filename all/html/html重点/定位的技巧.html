@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 
 <head>
     <meta charset="UTF-8">
@@ -50,9 +50,13 @@
                     2、接着减去盒子自身宽度一半
             */
             left: 50%;
-            margin-left: -100px;
             top: 50%;
-            margin-top: -100px;
+            /* margin-left: -100px; */
+            /* 
+                移动自身一半的距离
+                    tanslate(x,y)
+            */
+            transform: translate(-50%, -50%);
         }
     </style>
 </head>
