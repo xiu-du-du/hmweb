@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .box1,
+        .box2,
+        .box3 {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+        }
+        
+        .box1 {
+            background-color: pink;
+            left: 0;
+            z-index: 3;
+        }
+        
+        .box2 {
+            background-color: orange;
+            left: 50px;
+            z-index: 2;
+        }
+        
+        .box3 {
+            background-color: greenyellow;
+            left: 100px;
+            z-index: 1;
+        }
+        
+        .box4 {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: indianred;
+            /* 
+                绝对定位居中的算法(垂直和水平居中思路相同)：
+                    1、先计算到浏览器一半的位置
+                    2、接着减去盒子自身宽度一半
+            */
+            left: 50%;
+            margin-left: -100px;
+            top: 50%;
+            margin-top: -100px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 定位的叠放次序 z-index -->
+    <!-- <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div> -->
+
+    <!-- 绝对定位盒子居中的算法 -->
+    <div class="box4"></div>
+
+    <!-- 
+        绝对定位和固定定位的特性：
+        行内元素和块元素开启绝对定位或者固定定位：
+            1、行内元素开启定位后，可以直接设置宽度和高度
+            2、块级元素开启定位后，如果没有设置宽度和高度，默认大小是内容大小。
+        
+        浮动、绝对定位、固定定位(脱离文档流)的元素不会触发外边距合并的问题。
+            1、浮动，只会压住下面文档流的盒子，不会压住下面文档流盒子内的文字或图片。
+                适用于做文字环绕效果。
+            2、绝对定位、固定定位，会压住下面文档流的所有内容。
+    -->
+</body>
+
+</html>
