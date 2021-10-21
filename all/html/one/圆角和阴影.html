@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            text-shadow: 5px 2px 2px rgba(0, 0, 0, .4);
+            color: blue;
+        }
+        
+        .box {
+            width: 200px;
+            height: 50px;
+            background-color: pink;
+            margin: 100px;
+            border-radius: 25px;
+            /* 
+                x y 模糊度 阴影尺寸 颜色 内阴影或外阴影，默认外阴影
+            */
+            /* box-shadow: 5px 5px 15px 0 rgba(255, 255, 255, 0.6) inset; */
+        }
+        
+        .box:hover {
+            box-shadow: 5px 5px 10px -4px rgba(0, 0, 0, .3);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 文字阴影 -->
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo cumque debitis quam ea laborum nostrum culpa rem, quo molestias in eveniet repellat iusto nihil repellendus sed perspiciatis similique ipsa consequuntur.</p>
+
+    <!-- 盒子阴影 -->
+    <div class="box"></div>
+</body>
+
+</html>
