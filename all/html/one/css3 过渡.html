@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            width: 200px;
+            height: 10px;
+            border: 3px solid red;
+            border-radius: 10px;
+            /* 
+                transition:变化的属性 花费的时间 运动曲线 何时开始
+                多个属性用逗号分割，或者直接写个 all
+             */
+            /* transition: width .4s, height .4s; */
+            transition: all .4s;
+        }
+        
+        .box2 {
+            width: 1%;
+            height: 10px;
+            background-color: pink;
+            transition: all 2s;
+        }
+        
+        .box1:hover .box2 {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+</body>
+
+</html>
