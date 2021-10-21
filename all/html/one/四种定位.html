@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        body {
+            height: 2000px;
+        }
+        
         .box1 {
             width: 100px;
             height: 100px;
@@ -52,18 +56,72 @@
                 问：为什么要给父元素设置相对定位？可以设置成绝对定位吗？
                 答：子元素设置绝对定位是为了根据父元素进行更好的定位布局，如果父元素设置了绝对定位，那么父元素会脱离文档流，从而导致下方其他的元素位置错乱，使整体布局发生改变。而相对定位则不会脱离文档流，虽然位置发生改变，但原先的位置会保留占用，因此，父元素使用相对定位。
         */
+        
+        .box5 {
+            /* 固定定位 position: fixed; 
+                相对于可视窗口定位，固定在视口，不会被其他影响
+                开启固定定位后，元素不保留原先位置，会脱离文档流
+
+            */
+            width: 80px;
+            height: 300px;
+            background-color: green;
+            position: fixed;
+            top: 100px;
+            /* 
+                小算法，让固定定位的盒子贴着版心
+                    1、首先计算定位到浏览器宽度一半的距离
+                    2、然后使用margin-left设置版心一半的距离
+            */
+            left: 50%;
+            margin-left: 400px;
+        }
+        
+        .box6 {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            /* 粘性定位 position: sticky; 
+                相对于视口定位
+                定位占有原先位置,不脱离文档流
+                需要添加top,bottom,right,left其中之一才会生效
+            */
+            position: sticky;
+            top: 0;
+        }
+        
+        .box7 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
     </style>
 </head>
 
 <body>
+    <!-- 相对定位 -->
     <div class="box1"></div>
     <div class="box2"></div>
+
     <br>
     <br>
 
+    <!-- 相对定位 -->
     <div class="box3">
         <div class="box4"></div>
     </div>
+
+    <br>
+    <br>
+
+    <!-- 固定定位 -->
+    <div class="box5"></div>
+
+    <br>
+    <br>
+
+    <!-- 粘性定位 -->
+    <div class="box6"></div>
 </body>
 
 </html>
