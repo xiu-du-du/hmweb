@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father {
+            width: 300px;
+            height: 200px;
+            background-color: orange;
+        }
+        
+        .son {
+            background-color: #bfa;
+            /* width: calc(100px+30px); */
+            /* 
+                跟随父元素宽度变化
+
+                京东做法
+            */
+            width: calc(100% - 30px);
+            height: calc(100% - 50px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+</body>
+
+</html>
