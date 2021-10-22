@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var num = 11
+        console.log(num)
+
+        /* 
+            isNaN   如果是数字返回false 如果不是数字返回true
+        */
+        console.log(isNaN(num))
+
+        var str = 'Hello World\n今天星期六'
+        console.log(str)
+        console.log(str.length)
+        var a = '123'
+        var b = 123
+        console.log(a + b)
+
+        var flag = true
+        console.log(flag + 1)
+
+        //undefined 和 字符串相加，也是做拼接操作
+        var c
+        console.log(c + "abc")
+
+        //undefined 和 数字相加，返回NaN
+        console.log(c + 1)
+
+        //null空值
+        var space = null
+            //null 和 字符串相加，也是做拼接操作
+        console.log(space + "123")
+            //null 和 数字相加，返回数字本身
+        console.log(space + 2)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
