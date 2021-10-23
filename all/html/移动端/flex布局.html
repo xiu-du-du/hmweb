@@ -19,7 +19,18 @@
                     row-reverse 翻转，从下到上
                     column-reverse  翻转，从右到左
             */
-            flex-direction: row;
+            /* flex-direction: row; */
+            /* 
+                flex-wrap 设置子元素是否换行
+                    nowrap  默认值，不换行，如果父元素放不下，会自动缩小子元素的尺寸适应父元素
+                    wrap    开启换行
+            */
+            /* flex-wrap: wrap; */
+            /* 
+                flex-flow 设置主轴方向和是否换行
+                        是flex-direction 和 flex-wrap的复合写法
+            */
+            flex-flow: row wrap;
             /* 
                 justify-content 设置主轴的布局方式 
                     flex-start  默认值，从头部开始，如果主轴是x轴则从左到右
@@ -30,12 +41,6 @@
                     
             */
             justify-content: center;
-            /* 
-                flex-wrap 设置子元素是否换行
-                    nowrap  默认值，不换行，如果父元素放不下，会自动缩小子元素的尺寸适应父元素
-                    wrap    开启换行
-            */
-            flex-wrap: wrap;
             /* 
                 align-items 设置侧轴上的子元素的排列方式，只适用于单行
                     flex-start  默认值，从头部开始，如果主轴是x轴则从左到右
