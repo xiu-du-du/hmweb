@@ -1,0 +1,231 @@
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+input {
+    -webkit-appearance: none;
+}
+
+a,
+img {
+    -webkit-touch-callout: none;
+}
+
+body {
+    width: 100%;
+    min-width: 320px;
+    max-width: 640px;
+    margin: 0 auto;
+    font-family: -apple-system, Helvetica, sans-serif;
+    line-height: 1.5;
+    background-color: #ccc;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+img {
+    vertical-align: middle;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    line-height: 0;
+    visibility: hidden;
+    height: 0;
+    clear: both;
+}
+
+.app,
+.app ul li {
+    height: 45px;
+}
+
+.app ul li {
+    float: left;
+    background-color: #333;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    color: #fff;
+}
+
+.app ul li:nth-child(1) {
+    width: 8%;
+}
+
+.app ul li:nth-child(1) img {
+    width: 10px;
+}
+
+.app ul li:nth-child(2) {
+    width: 10%;
+}
+
+.app ul li:nth-child(2) img {
+    width: 30px;
+    /* 图片默认和文字基线对齐的，如果图片尺寸过大会导致无法对齐，所以要加上vertical-align: middle 才会让其居中对齐 */
+    vertical-align: middle;
+}
+
+.app ul li:nth-child(3) {
+    width: 57%;
+}
+
+.app ul li:nth-child(4) {
+    width: 25%;
+    background-color: #f63515;
+}
+
+.search-wrap {
+    height: 44px;
+    /* 因页面样式，需要改成固定定位，从而导致内部元素样式错乱，因此要设置宽度和其父元素100%，设置最大宽度和最小宽度范围*/
+    position: fixed;
+    /* .search 增加margin-top后，会导致外边距问题出现，因此要给父元素添加overflow:hidden */
+    overflow: hidden;
+    width: 100%;
+    min-width: 320px;
+    max-width: 640px;
+}
+
+.search-btn {
+    width: 40px;
+    height: 44px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.search-btn::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 18px;
+    background: url(../images/s-btn.png) no-repeat;
+    background-size: 20px 18px;
+    margin: 14px 0 0 15px;
+}
+
+.search {
+    height: 30px;
+    background-color: #fff;
+    margin: 0 50px;
+    border-radius: 15px;
+    margin-top: 7px;
+    position: relative;
+}
+
+.search .jd-icon {
+    width: 20px;
+    height: 15px;
+    position: absolute;
+    top: 8px;
+    left: 13px;
+    background: url(../images/jd.png) no-repeat;
+    background-size: 20px 15px;
+}
+
+.search .jd-icon::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 15px;
+    background-color: #ccc;
+    position: absolute;
+    top: 0px;
+    right: -8px;
+}
+
+.sou {
+    width: 18px;
+    height: 15px;
+    position: absolute;
+    top: 8px;
+    left: 50px;
+    background: url(../images/jd-sprites.png) no-repeat -83px 0;
+    background-size: 200px auto;
+}
+
+.slider img {
+    width: 100%;
+}
+
+.search-login {
+    width: 40px;
+    height: 44px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #fff;
+    line-height: 44px;
+}
+
+.brand {
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+}
+
+.brand div {
+    width: calc(100%/3);
+    float: left;
+}
+
+.brand div img {
+    width: 100%;
+}
+
+nav {
+    padding-top: 5px;
+}
+
+nav a {
+    /* 直接使用display:block转换成块元素会导致独占一行，因此使用浮动可以布局的同时转换成块元素 */
+    float: left;
+    width: 20%;
+    text-align: center;
+    overflow: hidden;
+}
+
+nav a img {
+    width: 40px;
+    margin: 10px 0;
+}
+
+nav a span {
+    display: block;
+}
+
+.news {
+    margin-top: 20px;
+}
+
+.news img {
+    width: 100%;
+}
+
+.news a {
+    float: left;
+    box-sizing: border-box;
+}
+
+.news a:nth-child(1) {
+    width: 50%;
+}
+
+.news a:nth-child(n+2) {
+    width: 25%;
+    border-left: 1px solid #ccc;
+}
