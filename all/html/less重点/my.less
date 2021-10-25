@@ -1,0 +1,23 @@
+@baseFont: 50px;
+html{
+    font-size: @baseFont;
+}
+
+/* 
+    变量定义
+        1、必须是字母开头，区分大小写
+        2、不允许特殊符号
+*/
+@clolrPink123:pink;
+div{
+    /* 
+        运算：
+            1、如果运算符左右两边的数值如果都有单位，则以第一个数值的单位为准
+            2、运算表达式要写在括号内，否则无效
+            3、运算符两边要加空格
+    */
+    width: (82rem / @baseFont);
+    height: (100rem / (@baseFont+1));
+    background-color: @clolrPink123 - #444;
+}
+
