@@ -1,8 +1,8 @@
 <!--
  * @Author: xiuxiu
  * @Date: 2021-10-26 12:53:49
- * @LastEditTime: 2021-10-26 13:08:14
- * @FilePath: \web\all\html\js重点\函数.html
+ * @LastEditTime: 2021-10-26 20:54:26
+ * @FilePath: \all\html\js重点\函数.html
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -14,8 +14,24 @@
     <title>Document</title>
     <script>
         function fun() {
-
+            // arguments 存储所有传递的实参
+            // 只有函数才有arguments对象，而且每个函数都内置好了arguments
+            /* 
+                arguments 用伪数组形式展示
+                    什么是伪数组？
+                        1、具有数组的 lenth 属性
+                        2、按照索引的方式进行存储
+                        3、伪数组没有真正数组的一些方法，例如：pop() push() 等等
+            */
+            // console.log(arguments)
+            // console.log(arguments.length)
+            // console.log(arguments[1])
+            for (var i = 0; i < arguments.length; i++) {
+                console.log(arguments[i])
+            }
         }
+        fun(12, 1)
+        fun(12, 1, 8, 10, 6)
     </script>
 </head>
 
