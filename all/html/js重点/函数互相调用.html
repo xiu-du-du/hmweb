@@ -1,0 +1,80 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-10-27 05:18:14
+ * @LastEditTime: 2021-10-27 05:51:45
+ * @FilePath: \all\html\js重点\函数互相调用.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //求数组中所有奇数的平均值
+        function fun(arr) {
+            var num = 0
+            for (let i = 0; i < arr.length; i++) {
+                const element = arr[i];
+                if (element % 2 == 1) {
+                    num = num + (element / 2)
+                }
+            }
+            console.log(num);
+        }
+        // fun([4, 3, 7, 5, 9, 11, 50])
+
+
+        /* 
+            判断质数
+        */
+        function fun2(num) {
+            if (num >= 2) {
+                for (let index = 2; index < num - 1; index++) {
+                    if (num % index == 0) {
+                        console.log("这个数不是质数");
+                        return
+                    }
+                }
+                console.log(num + "是质数");
+            }
+        }
+        // fun2(11)
+
+
+        /* 
+            判断闰年
+        */
+        function isRunYear(year) {
+            if (year > 0) {
+                if (year % 4 == 0 && year % 100 == 0 && year % 400 == 0) {
+                    console.log(29);
+                } else {
+                    console.log(28);
+                }
+            }
+        }
+
+        function fun3() {
+            var year = prompt("输入年份")
+            isRunYear(year)
+        }
+        // fun3()
+
+        /* 
+            声明
+        */
+        var fun4 = (num) => {
+            console.log(num)
+        }
+        fun4("abc")
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
