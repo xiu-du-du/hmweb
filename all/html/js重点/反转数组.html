@@ -1,0 +1,36 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-10-26 21:03:20
+ * @LastEditTime: 2021-10-26 21:12:03
+ * @FilePath: \all\html\js重点\反转数组.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function reverse() {
+            console.log(arguments)
+            console.log(arguments[0])
+            var newArr = []
+            for (var i = arguments[0].length - 1; i >= 0; i--) {
+                newArr[newArr.length] = arguments[0][i]
+            }
+            return newArr
+        }
+        console.log(reverse([2, 4, 1, 5, 8]));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
+</body>
+
+</html>
