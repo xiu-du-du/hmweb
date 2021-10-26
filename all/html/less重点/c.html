@@ -1,0 +1,55 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-10-25 15:37:09
+ * @LastEditTime: 2021-10-26 03:43:28
+ * @FilePath: \web\all\html\less重点\c.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // function collatz(number) {
+        //     if (number % 2 == 0) {
+        //         return number / 2
+        //     } else if (number % 2 == 1) {
+        //         return 3 * (+number + 1)
+        //     }
+        // }
+        // var userNum = prompt("输入一个数字：")
+        // var a = collatz(userNum)
+        // while (true) {
+        //     if (a == 1) {
+        //         console.log(a)
+        //         break
+        //     } else {
+        //         a = collatz(a)
+        //         console.log(a)
+        //     }
+        // }
+
+        function collatz(num) {
+            console.log(num)
+            num = Math.floor(num)
+            if (num == 1) {
+                return num
+            } else if (num % 2 == 1) {
+                num = 3 * num + 1
+            } else {
+                num = num / 2
+            }
+            return collatz(num)
+        }
+        console.log(collatz(userNum))
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
