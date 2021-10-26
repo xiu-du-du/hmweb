@@ -1,0 +1,34 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-10-26 20:56:00
+ * @LastEditTime: 2021-10-26 21:01:45
+ * @FilePath: \all\html\js重点\arguments_demo.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getMax() {
+            var max = arguments[0]
+            for (var i = 1; i < arguments.length; i++) {
+                if (arguments[i] > max) {
+                    max = arguments[i]
+                }
+            }
+            console.log(max)
+
+        }
+        getMax(5, 3, 6, 1, 7, 0)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
