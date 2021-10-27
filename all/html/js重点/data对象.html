@@ -1,0 +1,59 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-10-28 06:46:04
+ * @LastEditTime: 2021-10-28 07:41:56
+ * @FilePath: \all\html\js重点\data对象.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var data = new Date()
+            // console.log(data);
+            // console.log(data.getFullYear()); //获取年
+            // console.log(data.getMonth() + 1); //获取月,返回月份小1个月，因此要加1
+            // console.log(data.getDate()); //获取日
+            // console.log(data.getDay()); //获取星期几，周1到周六返回1-6，周日返回0
+            // console.log(data.getHours()); //获取小时
+            // console.log(data.getMinutes()); //获取分钟
+            // console.log(data.getSeconds()); //获取秒钟
+            /* 
+                写一个时间格式
+            */
+        var year = data.getFullYear()
+        var month = data.getMonth() + 1
+        var dates = data.getDate()
+        var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+        var day = data.getDay()
+        var hours = data.getHours()
+        var minutes = data.getMinutes()
+        var seconds = data.getSeconds()
+
+        function getTime() {
+            month = month < 10 ? "0" + month : month
+            dates = dates < 10 ? "0" + dates : dates
+            hours = hours < 10 ? "0" + hours : hours
+            minutes = minutes < 10 ? "0" + minutes : minutes
+            seconds = seconds < 10 ? "0" + seconds : seconds
+            return year + '年' + month + '月' + dates + '日 ' + arr[day] + ' ' + hours + ':' + minutes + ':' + seconds
+        }
+        console.log(getTime());
+
+        //获取总毫秒数，时间戳
+        console.log(data.getTime());
+        console.log(data.valueOf());
+        console.log(Date.now());
+        console.log(+data);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
