@@ -1,0 +1,113 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-10-27 10:58:18
+ * @LastEditTime: 2021-10-27 11:49:28
+ * @FilePath: \all\html\js重点\对象.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        //
+        /* 
+            2种方式创建对象
+        */
+        // var obj = {
+        //     name: "tom",
+        //     age: 18,
+        //     sayHi: function() {
+        //         console.log("hi")
+        //     }
+        // }
+        // var obj2 = new Object()
+        // obj2.name = "jom"
+        // obj2.age = 22
+        // console.log(obj)
+        // console.log(obj2)
+        // obj["a"] = 1
+        // obj2.sayhi = function() {
+        //     console.log("hi");
+        // }
+        // console.log(obj);
+        // console.log(obj2);
+
+        /* 
+            创建构造函数，构造函数创建对象的过程称为实例化
+            构造函数：
+                - 把对象里面一些相同的属性和方法抽象出来封装到函数里面
+                - 构造函数不需要写return就可以返回结果
+                - 调用构造函数必须使用new
+                - 只要调用构造函数，就会创建一个对象
+                - 属性和方法前面必须用this
+
+            new关键字执行过程
+                1、在内存中创建一个空对象
+                2、this会指向这个创建的空对象
+                3、执行函数内的代码，给空对象添加属性和方法
+                4、最后会自己返回这个对象(所以不需要写return)
+        */
+        // function Person(umame, age) {
+        //     this.name = umame,
+        //         this.age = age,
+        //         this.sing = function() {
+        //             return this.name
+        //         }
+        // }
+        // // var zxy = new Person("zxt", 18)
+        // console.log(new Person("zxy", 18));
+        // var ldh = new Person()
+        // ldh.name = "ldh"
+        // ldh.age = 55
+        // console.log(ldh);
+        // console.log(ldh.sing());
+
+        /* 
+            demo
+        */
+        // function Hero(name, type, blood) {
+        //     this.name = name,
+        //         this.type = type,
+        //         this.blood = blood,
+        //         this.attack = function(value) {
+        //             console.log(value);
+        //         }
+        // }
+        // var lp = new Hero("廉颇", "力量", 500)
+        // console.log(lp);
+        // lp.attack("近战")
+        // var hy = new Hero("后裔", "射手", 100)
+        // console.log(hy);
+        // hy.attack("远程")
+
+
+        /* 
+            遍历对象
+            for...in
+                可以遍历出对象里面的属性和方法
+                    然后根据遍历出的属性或方法得出对应的值
+        */
+        var obj = {
+            name: 'tom',
+            age: 24,
+            sex: '男'
+        }
+
+        for (const key in obj) {
+            if (obj.hasOwnProperty.call(obj, key)) {
+                console.log(obj[key]);
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

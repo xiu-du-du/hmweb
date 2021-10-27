@@ -1,0 +1,44 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-10-27 11:53:45
+ * @LastEditTime: 2021-10-27 12:14:10
+ * @FilePath: \all\html\js重点\对象2.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // function Cat(name, color) {
+        //     this.name = name
+        //     this.color = color
+        //     this.clutch = function() {
+        //         console.log("抓jerry");
+        //     }
+
+        // }
+        // var tom = new Cat("tom", "蓝色")
+        // console.log(tom);
+        // tom.clutch()
+        function fun() {
+            var arr = []
+            for (var i = 0; i < 101; i++) {
+                if (i % 5 == 0) {
+                    arr.push(i)
+                }
+            }
+            console.log(arr[Math.floor(Math.random() * arr.length)]);
+        }
+        fun()
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
