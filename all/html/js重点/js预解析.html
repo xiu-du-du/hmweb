@@ -1,0 +1,60 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-10-27 08:18:26
+ * @LastEditTime: 2021-10-27 10:33:33
+ * @FilePath: \all\html\js重点\js预解析.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //
+        /* 
+            1、js引擎运行js，分为两步：   
+                第一步、预解析：js引擎会把js 里面所有的var 还有function 提升到当前作用于的前面
+                第二步、代码执行：按照代码书写的顺序从上往下执行         
+            2、预解析分为两个：
+                - 变量预解析（变量提升）
+                    把所有变量声明提升到当前的作用域最前面，不提升赋值操作
+                - 函数预解析（函数提升）
+                    把所有函数声明提升到当前作用域最前面，不提升调用操作
+        */
+
+        var num = 10
+        fn()
+
+        function fn(a) {
+            console.log(num); //undefined
+            var num = 20
+            console.log(num); //20
+            console.log(a); //undefined
+            a = 1
+            console.log(a); //1
+        }
+
+
+        // 报错
+        f1()
+        console.log(c);
+        console.log(b);
+        console.log(a); //a未定义
+
+        function f1(params) {
+            var a = b = c = 9 // var a=9  b=9 c=9 
+            console.log(a);
+            console.log(b);
+            console.log(c);
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
