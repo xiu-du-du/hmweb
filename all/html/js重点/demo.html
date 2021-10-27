@@ -1,7 +1,7 @@
 <!--
  * @Author: xiuxiu
  * @Date: 2021-10-28 06:31:07
- * @LastEditTime: 2021-10-28 06:41:20
+ * @LastEditTime: 2021-10-28 06:44:02
  * @FilePath: \all\html\js重点\demo.html
 -->
 <!DOCTYPE html>
@@ -17,15 +17,17 @@
         function getRandom(min, max) {
             return Math.floor(Math.random() * (max - min + 1)) + min
         }
-        var a = getRandom(1, 10)
+        var a = getRandom(1, 50)
         console.log(a);
-        while (true) {
+        var temp = 0
+        while (temp < 10) {
             var num = prompt("输入一个数字")
             if (num == a) {
                 console.log("猜对了");
                 break
             } else {
                 console.log('猜错了');
+                temp++
             }
         }
     </script>
