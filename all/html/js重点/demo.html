@@ -1,0 +1,38 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-10-28 06:31:07
+ * @LastEditTime: 2021-10-28 06:41:20
+ * @FilePath: \all\html\js重点\demo.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //猜数字
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min
+        }
+        var a = getRandom(1, 10)
+        console.log(a);
+        while (true) {
+            var num = prompt("输入一个数字")
+            if (num == a) {
+                console.log("猜对了");
+                break
+            } else {
+                console.log('猜错了');
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
