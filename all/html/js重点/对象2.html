@@ -1,7 +1,7 @@
 <!--
  * @Author: xiuxiu
  * @Date: 2021-10-27 11:53:45
- * @LastEditTime: 2021-10-27 18:19:04
+ * @LastEditTime: 2021-10-28 06:29:53
  * @FilePath: \all\html\js重点\对象2.html
 -->
 <!DOCTYPE html>
@@ -34,8 +34,64 @@
         //     console.log(arr[Math.floor(Math.random() * arr.length)]);
         // }
         // fun()
-        console.log(Math.PI); //输出圆周率
-        console.log(Math.max(1, 99, 3)); //返回其中最大的数，如果参数不是数值型，返回NaN
+
+
+
+        /* 
+            封装自己的Math方法
+        */
+        // var myMath = {
+        //     PI: 3.141592653,
+        //     max: function() {
+        //         var max = arguments[0]
+        //         for (var i = 0; i < arguments.length; i++) {
+        //             if (arguments[i] > max) {
+        //                 max = arguments[i]
+        //             }
+        //         }
+        //         return max
+        //     },
+        //     min: function() {
+        //         var min = arguments[0]
+        //         for (var i = 0; i < arguments.length; i++) {
+        //             if (arguments[i] < min) {
+        //                 min = arguments[i]
+        //             }
+        //         }
+        //         return min
+        //     }
+        // }
+        // console.log(myMath.PI);
+        // console.log(myMath.max(9, 5, 10, 66));
+        // console.log(myMath.min(99, 5, 11, 24, 3));
+
+
+        /* 
+            Math对象
+        */
+        // console.log(Math.PI); //输出圆周率
+        // console.log(Math.max(1, 99, 3)); //返回其中最大的数，如果参数不是数值型，返回NaN
+        console.log(Math.abs(13)); //取绝对值
+        console.log(Math.abs("-5")); //取绝对值,返回5
+        console.log(Math.abs("tom")); //取绝对值,返回NaN
+        console.log(Math.floor(7.7)); //向下取整，直接去掉小数
+        console.log(Math.ceil(7.1)); //向上取整，有小数直接加1
+
+        //四舍五入，其他数值正常四舍五入取值。 
+        //      .5不论正负，向大取值。
+        console.log(Math.round(5.4)); //四舍五入
+        console.log(Math.round(5.5)); //四舍五入
+        console.log(Math.round(-1.5)); //返回-1
+
+        //随机数
+        console.log(Math.random()); //返回随机小数，0<=x<1
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min
+        }
+        console.log(getRandom(1, 10)); //获取1-10范围内随机数字，最大取到10最小取到1
+
+        var arr = ['张三', '李四', '小明', '小王']
+        console.log(arr[getRandom(0, arr.length - 1)]); //取数组中随机元素
     </script>
 </head>
 
