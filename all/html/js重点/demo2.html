@@ -1,0 +1,65 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-10-28 12:57:36
+ * @LastEditTime: 2021-10-28 13:17:23
+ * @FilePath: \all\html\js重点\demo2.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function unique(arr) {
+            var newArr = []
+            for (var i = 0; i < arr.length; i++) {
+                if (newArr.indexOf(arr[i]) === -1) {
+                    newArr.push(arr[i])
+                }
+            }
+            return newArr
+        }
+        var demo = ['c', 'a', 'z', 'a', 'x', 'a', 'x', 'c', 'b']
+        console.log(unique(demo));
+
+        /* 
+            数组转为字符串
+        */
+        console.log(typeof demo.toString());
+        console.log(demo.toString());
+        /* 
+            分隔符
+                使用分隔符分割数组里的每个元素
+        */
+        console.log(demo.join(" | "));
+        const array1 = ['a', 'b', 'c'];
+        const array2 = ['d', 'e', 'f'];
+        const array3 = array1.concat(array2);
+        console.log(array3);
+
+        /* 
+            slice 截取
+                第一个参数：开始位置
+                第二个参数：结束位置
+                当只有一个参数时，默认为开始位置
+        */
+        const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+        console.log(animals.slice(2));
+        // 结果 ["camel", "duck", "elephant"]
+        console.log(animals.slice(2, 4));
+        // 结果 ["camel", "duck"]
+        console.log(animals.slice(-2));
+        // 结果 ["duck", "elephant"]
+        console.log(animals.slice(2, -1));
+        // 结果 ["camel", "duck"]
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
