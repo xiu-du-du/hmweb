@@ -1,0 +1,36 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-10-28 11:58:46
+ * @LastEditTime: 2021-10-28 12:24:14
+ * @FilePath: \all\html\js重点\demo1.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr = [1500, 1200, 2000, 2100, 1800]
+        var newArr = []
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] < 2000) {
+                newArr.push(arr[i])
+            }
+        }
+        console.log(newArr);
+        console.log(newArr.reverse()); //reverse()方法，返回翻转后的数组
+        console.log(newArr.sort(function(a, b) {
+            return a - b //升序排列
+                // return b - a //降序排列
+        })); //sort()方法，数组排序
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
