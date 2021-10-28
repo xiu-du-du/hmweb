@@ -1,7 +1,7 @@
 <!--
  * @Author: xiuxiu
  * @Date: 2021-10-29 06:56:08
- * @LastEditTime: 2021-10-29 06:56:08
+ * @LastEditTime: 2021-10-29 07:15:12
  * @FilePath: \all\html\js重点\khzy.html
 -->
 <!DOCTYPE html>
@@ -13,6 +13,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
+        //
+        // var str = '!你好粗俗你先吃吧22岁，你擦手大概的电脑搜啊哈电压是广东奥us活动按时'
+
+        // for (var i = 0; i < str.length; i++) {
+        //     var chars = str.charCodeAt(i)
+        //     if (47 < chars && chars < 58) {
+        //         console.log("存在数字数据");
+        //     }
+        // }
+
+
+        //
+        var str = '丽丽是一个女生，丽丽今年已经24岁了，丽丽的属相是狗。'
+        var num = str.indexOf('丽丽')
+        var flag = 0
+        while (num != -1) {
+            console.log('第' + (flag + 1) + '次的下标' + num);
+            num = str.indexOf('丽丽', num + 1)
+            flag++
+        }
+        console.log('共查找到：' + flag + '次');
     </script>
 </head>
 
