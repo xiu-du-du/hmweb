@@ -1,7 +1,7 @@
 <!--
  * @Author: xiuxiu
  * @Date: 2021-10-28 14:11:28
- * @LastEditTime: 2021-10-29 05:46:16
+ * @LastEditTime: 2021-10-29 06:11:44
  * @FilePath: \all\html\js重点\字符串对象.html
 -->
 <!DOCTYPE html>
@@ -79,6 +79,62 @@
         // }
         // console.log(max); //获取到最大属性值
         // console.log(ch); //获取到属性名
+
+        // var str = 'andya'
+        //     // console.log(str.replace('a', 'c')); //只会替换字符串里第一个匹配到的字符
+        // while (str.indexOf('a') != -1) {
+        //     str = str.replace('a', '*')
+        // }
+        // console.log(str);
+
+        // /* 
+        //     join 数组转成字符串
+        //         数组使用join，返回字符串
+        //     split 字符串转成数组
+        //         字符串使用split，返回数组
+        // */
+        // var str2 = 'red,pink,blue'
+        // console.log(str2.split(',')); //返回数组
+        // var arr = [1, 2, 3, 4]
+        // console.log(arr.join(5)); //将5作为分隔符，把数组里的元素和5一起拼接成字符串，返回字符串
+
+        // demo
+        var str = 'abaasdffggghhjjkkgfddsssss3444343'
+            // console.log(str.length);
+            // console.log(str[0]);
+            // console.log(str.charAt(3));
+            // console.log(str.indexOf('i')); //返回-1，所以不存在
+            // console.log(str.indexOf('c')); //返回-1，所以不存在
+            // console.log(str.indexOf('b')); //返回1，所以存在
+            // while (str.indexOf('g') != -1) {
+            //     str = str.replace('g', '22')
+            // }
+            // console.log(str);
+            // while (str.indexOf('ss') != -1) {
+            //     str = str.replace('ss', 'b')
+            // }
+            // console.log(str);
+            // console.log(str.slice(1, 6));
+        var max = 0
+        var obj = {}
+        for (var i = 0; i < str.length; i++) {
+            //遍历字符串对象
+            var chars = str[i] //接收字符串对象的每个值
+            if (obj[chars]) {
+                obj[chars]++
+            } else {
+                obj[chars] = 1
+            }
+        }
+        var ch = ''
+        for (var k in obj) { //遍历对象属性名
+            if (obj[k] > max) { //找出最大值
+                max = obj[k]
+                ch = k
+            }
+        }
+        console.log(max);
+        console.log(ch);
     </script>
 
 </head>
