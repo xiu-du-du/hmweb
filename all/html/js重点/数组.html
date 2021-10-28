@@ -1,0 +1,65 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-10-28 10:34:17
+ * @LastEditTime: 2021-10-28 11:57:06
+ * @FilePath: \all\html\js重点\数组.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //数组的翻转
+        function reverse(arr) {
+            if (arr instanceof Array) {
+                var newArr = []
+                for (var i = arr.length - 1; i >= 0; i--) {
+                    newArr[newArr.length] = arr[i]
+                }
+                return newArr
+            } else {
+                return '必须是数组的格式'
+            }
+        }
+        // console.log(reverse([1, 2, 3, 4, 5, 6]));
+
+        /* 
+            检测是否是数组
+        */
+        // var arr = []
+        // console.log(Array.isArray(arr));
+        // console.log(arr instanceof Array);
+
+        //添加和删除数组
+        /* 
+            push() 在数组的末尾添加元素
+                返回添加之后的数组总长度
+            unshift() 在数组开头添加元素
+                返回添加之后数组的长度
+        */
+        var arr = [1, 2, 3]
+            // arr.push('8', 9, '10')
+        arr.unshift('8', 9, '10')
+        console.log(arr);
+
+        /* 
+            pop() 从数组末尾删除一个元素
+                返回删除的元素
+            shift() 从数组开头删除一个元素
+                返回删除的元素
+        */
+        // arr.pop()
+        arr.shift()
+        console.log(arr)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
