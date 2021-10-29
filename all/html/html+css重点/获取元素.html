@@ -1,0 +1,92 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-10-29 10:42:12
+ * @LastEditTime: 2021-10-29 12:35:10
+ * @FilePath: \all\html\html+css重点\获取元素.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            //根据id获取元素
+            // var time = document.getElementById('time') //返回一个对象
+            // console.log(time);
+            // console.log(typeof time);
+            // console.dir(time)
+
+            //根据标签名获取元素
+            // var lis = document.getElementsByTagName('li') //返回一个伪数组
+            // for (var i = 0; i < lis.length; i++) {
+            //     console.log(lis[i]);
+            // }
+
+            //根据类名获取元素
+            var lis = document.getElementsByClassName('box') //返回一个伪数组
+                // console.log(lis);
+
+            /*
+                querySelector 返回第一个元素对象
+                querySelectorAll 返回全部元素对象集合
+                使用选择器获取要加符号，使用标签不用加
+            */
+
+            var lis = document.querySelector('#nav') // 返回第一个元素的对象
+            console.log(lis);
+            var lis = document.querySelector('li') //返回第一个元素的对象
+            console.log(lis);
+            var lis = document.querySelectorAll('.box') //返回所有的元素对象集合
+            console.log(lis);
+
+
+            //获取body
+            var bodyEle = document.body
+            console.log(bodyEle);
+            //获取html
+            var htmlEle = document.documentElement
+            console.log(htmlEle);
+
+
+
+            //获取标签下的子元素
+            // var nav = document.getElementById('nav')
+            // console.log(nav);
+            // var lis = nav.getElementsByTagName('li')
+            // for (var i = 0; i < lis.length; i++) {
+            //     console.log(lis[i]);
+            // }
+
+
+            /* 
+                innerHTML 算空格
+                innerText 不算空格
+            */
+            // console.log(time.innerHTML);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="time"> 123 123 </div>
+    <ul class="box">
+        <li>a0</li>
+        <li>a1</li>
+        <li>a2</li>
+        <li>a3</li>
+        <li>a4</li>
+    </ul>
+    <ul id="nav" class="box">
+        <li>1a0</li>
+        <li>2a1</li>
+        <li>3a2</li>
+        <li>4a3</li>
+        <li>5a4</li>
+    </ul>
+</body>
+
+</html>
