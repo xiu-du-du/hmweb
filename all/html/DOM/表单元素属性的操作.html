@@ -1,0 +1,33 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-11-02 21:48:08
+ * @LastEditTime: 2021-11-02 21:54:39
+ * @FilePath: \all\html\DOM\表单元素属性的操作.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            var btn = document.querySelector("button")
+            var input = document.querySelector("input")
+            btn.onclick = function() {
+                // input.value = "点击了"   表单内的值用value修改
+                input.value = "123"
+                this.disabled = true //点击后，禁用按钮,这个this指向的是事件函数的调用者
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button>按钮</button>
+    <input type="text" value="输入内容">
+</body>
+
+</html>
