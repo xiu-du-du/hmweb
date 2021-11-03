@@ -1,0 +1,38 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-11-03 12:35:18
+ * @LastEditTime: 2021-11-03 12:39:24
+ * @FilePath: \all\html\DOM\样式修改.html
+-->
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var div = document.querySelector("div")
+            div.onclick = function() {
+                div.style.backgroundColor = "red"
+                div.style.width = "400px"
+                div.style.height = "400px"
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>
