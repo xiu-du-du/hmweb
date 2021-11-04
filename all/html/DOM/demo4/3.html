@@ -1,0 +1,51 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-11-04 15:51:12
+ * @LastEditTime: 2021-11-04 15:57:48
+ * @FilePath: \all\html\DOM\demo4\3.html
+-->
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onclick = function() {
+            var box = document.querySelector(".box")
+            var close = document.querySelector("i")
+            close.onclick = function() {
+                box.style.display = "none"
+            }
+        }
+    </script>
+    <style>
+        .box {
+            width: 590px;
+            height: 40px;
+            background: url(./img/luzhou.jpg) no-repeat;
+            background-size: 590px auto;
+            position: relative;
+        }
+        
+        .box i {
+            width: 18px;
+            height: 20px;
+            background: url(./img/close.jpg) no-repeat;
+            position: absolute;
+            right: -18px;
+            top: 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <i></i>
+    </div>
+</body>
+
+</html>
