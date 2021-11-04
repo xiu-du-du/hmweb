@@ -1,0 +1,63 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-11-04 15:03:40
+ * @LastEditTime: 2021-11-04 15:19:04
+ * @FilePath: \all\html\DOM\demo3.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .register {
+            width: 600px;
+            margin: 100px auto;
+        }
+        
+        .message {
+            display: inline-block;
+            color: #999;
+            font-size: 12px;
+            background: url(./images/mess.png) no-repeat left center;
+            padding-left: 20px;
+        }
+        
+        .wrong {
+            color: red;
+            background-image: url("./images/wrong.png");
+        }
+        
+        .right {
+            color: green;
+            background-image: url("./images/right.png");
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var ipt = document.querySelector(".ipt")
+            var message = document.querySelector(".message")
+            ipt.onblur = function() {
+                if (this.value.length < 6 || this.value.length > 16) {
+                    message.className = "message wrong"
+                    message.innerHTML = "输入不正确，请输入6~16位"
+                } else {
+                    message.className = "message right"
+                    message.innerHTML = "输入正确"
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="register">
+        <input type="password" class="ipt">
+        <p class="message">请输入6~16位密码</p>
+    </div>
+</body>
+
+</html>
