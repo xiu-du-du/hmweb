@@ -1,0 +1,41 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-11-04 15:35:01
+ * @LastEditTime: 2021-11-04 15:38:45
+ * @FilePath: \all\html\DOM\demo4\1.html
+-->
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            var input = document.querySelector("input")
+            input.onfocus = function() {
+                if (this.value == "邮箱/手机") {
+                    this.value = ""
+                }
+            }
+            input.onblur = function() {
+                if (this.value == "") {
+                    this.value = "邮箱/手机"
+                }
+            }
+        }
+    </script>
+    <style>
+        input {
+            color: #999;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" value="邮箱/手机">
+</body>
+
+</html>
