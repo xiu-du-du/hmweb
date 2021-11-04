@@ -1,0 +1,84 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-11-04 16:00:25
+ * @LastEditTime: 2021-11-04 16:23:41
+ * @FilePath: \all\html\DOM\demo4\4.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        .box {
+            width: 80px;
+            height: 40px;
+            margin: 100px auto;
+        }
+        
+        ul li {
+            line-height: 40px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+        
+        ul li:hover {
+            color: rgb(242, 141, 66);
+            background-color: rgb(255, 245, 218);
+        }
+        
+        .other {
+            display: none;
+        }
+        
+        .box .weibo li:hover {
+            cursor: pointer;
+            color: rgb(242, 141, 66);
+            background-color: #ccc;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var box = document.querySelector(".box")
+            var weiBo = document.querySelector(".weibo")
+            var other = document.querySelector(".other")
+            console.log(weiBo.style.borderBottom);
+            box.onmouseover = function() {
+                other.style.display = "block"
+                console.log("123");
+            }
+            box.onmouseout = function() {
+                other.style.display = "none"
+                console.log("123");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="box">
+        <ul class="weibo">
+            <li>微博</li>
+
+        </ul>
+        <ul class="other">
+            <li>私信</li>
+            <li>评论</li>
+            <li>@我</li>
+        </ul>
+    </div>
+</body>
+
+</html>
