@@ -1,0 +1,39 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-11-04 15:39:57
+ * @LastEditTime: 2021-11-04 15:49:50
+ * @FilePath: \all\html\DOM\demo4\2.html
+-->
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            var btn = document.querySelector("button")
+            var html = document.body
+            var flage = true
+            btn.onclick = function() {
+                if (flage) {
+                    html.style.backgroundColor = "#000"
+                    btn.innerHTML = "开灯"
+                    flage = false
+                } else {
+                    html.style.backgroundColor = "#fff"
+                    btn.innerHTML = "关灯"
+                    flage = true
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button>关灯</button>
+</body>
+
+</html>
