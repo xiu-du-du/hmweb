@@ -1,0 +1,94 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-11-04 17:30:55
+ * @LastEditTime: 2021-11-04 17:58:06
+ * @FilePath: \all\html\DOM\百度换肤.html
+-->
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            var lis = document.querySelectorAll("li")
+            for (let i = 0; i < lis.length; i++) {
+                lis[i].onclick = function() {
+                    document.body.style.background = "url(./images/" + (i + 1) + ".jpg) no-repeat"
+                    document.body.style.backgroundSize = "100% auto"
+                }
+            }
+        }
+    </script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        div {
+            box-sizing: border-box;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        .box {
+            width: 450px;
+            background-color: #fff;
+            margin: 50px auto;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        
+        .box ul {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 430px;
+        }
+        
+        .box li {
+            width: 100px;
+            height: 62px;
+            cursor: pointer;
+        }
+        
+        .box li:nth-child(1) {
+            background: url(./images/1.jpg) no-repeat;
+            background-size: 100px auto;
+        }
+        
+        .box li:nth-child(2) {
+            background: url(./images/2.jpg) no-repeat;
+            background-size: 100px auto;
+        }
+        
+        .box li:nth-child(3) {
+            background: url(./images/3.jpg) no-repeat;
+            background-size: 100px auto;
+        }
+        
+        .box li:nth-child(4) {
+            background: url(./images/4.jpg) no-repeat;
+            background-size: 100px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+
+</html>
