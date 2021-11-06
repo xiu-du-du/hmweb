@@ -1,7 +1,7 @@
 <!--
  * @Author: xiuxiu
  * @Date: 2021-11-06 15:14:33
- * @LastEditTime: 2021-11-06 15:37:32
+ * @LastEditTime: 2021-11-06 15:44:47
  * @FilePath: \all\html\DOM\节点操作.html
 -->
 <!DOCTYPE html>
@@ -33,7 +33,16 @@
             /*
                 获取子节点二
             */
-            console.log(box.children); //获取子节点（元素节点）
+            console.log(box.children[0]); //获取子节点（元素节点）
+
+
+            //子节点操作
+            var ul = document.querySelector("ul")
+            console.log(ul.firstChild); //获取第一个子节点，包含文本节点
+            console.log(ul.lastChild); //获取最后一个子节点，包含文本节点
+            console.log(ul.firstElementChild); //获取第一个子元素节点
+            console.log(ul.lastElementChild); //获取最后一个子元素节点
+            console.log(ul.children[ul.children.length - 1]); //获取最后一个子元素节点
         }
     </script>
 </head>
@@ -46,7 +55,7 @@
         <li>我是li</li>
         <li>我是li</li>
         <li>我是li</li>
-        <li>我是li</li>
+        <li>我是li5</li>
     </ul>
     <div class="box">
         <span class="erweima">×</span>
