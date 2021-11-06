@@ -1,0 +1,72 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-11-06 16:46:55
+ * @LastEditTime: 2021-11-06 16:54:03
+ * @FilePath: \all\html\DOM\demo7.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            padding: 100px;
+        }
+        
+        textarea {
+            width: 200px;
+            height: 100px;
+            border: 1px solid pink;
+            outline: none;
+            resize: none;
+        }
+        
+        ul {
+            margin-top: 50px;
+        }
+        
+        li {
+            width: 300px;
+            padding: 5px;
+            background-color: rgb(245, 209, 243);
+            color: red;
+            font-size: 14px;
+            margin: 15px 0;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var btn = document.querySelector("button")
+            var text = btn.previousElementSibling
+            var ul = btn.nextElementSibling
+            btn.onclick = function() {
+                if (text.value == "") {
+                    alert("先输入内容！")
+                } else {
+                    var li = document.createElement("li")
+                    li.innerHTML = text.value
+                    ul.appendChild(li)
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <textarea name="" id=""></textarea>
+    <button>发布</button>
+    <ul>
+
+    </ul>
+</body>
+
+</html>
