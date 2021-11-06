@@ -1,0 +1,56 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-11-06 15:14:33
+ * @LastEditTime: 2021-11-06 15:37:32
+ * @FilePath: \all\html\DOM\节点操作.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            var box = document.querySelector(".box")
+            console.log(box);
+            console.log(box.parentNode); //获取父节点
+
+            /*
+                获取子节点一
+            */
+            console.log(box.childNodes); //获取所有子节点，包含元素节点、文本节点等等
+            //获取子节点里的元素节点
+            for (let i = 0; i < box.childNodes.length; i++) {
+                console.log(box.childNodes[i].nodeType);
+                if (box.childNodes[i].nodeType == 1) {
+                    console.log(box.childNodes[i]);
+                }
+            }
+
+            /*
+                获取子节点二
+            */
+            console.log(box.children); //获取子节点（元素节点）
+        }
+    </script>
+</head>
+
+<body>
+    <!-- 节点的优点 -->
+    <div>我是div</div>
+    <span>我是span</span>
+    <ul>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+    </ul>
+    <div class="box">
+        <span class="erweima">×</span>
+    </div>
+</body>
+
+</html>
