@@ -1,0 +1,53 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-11-06 16:13:18
+ * @LastEditTime: 2021-11-06 16:46:32
+ * @FilePath: \all\html\DOM\节点操作2.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            var div = document.querySelector("div")
+            console.log(div.nextSibling); //获取下一个节点，包含文本节点
+            console.log(div.previousSibling); //获取上一个节点，包含文本节点
+            console.log(div.nextElementSibling); //获取下一个元素节点
+            console.log(div.previousElementSibling); //获取上一个元素节点
+
+
+
+            /*
+                获取兄弟节点函数封装
+            */
+            console.log(getNextElementSibling(div));
+
+            function getNextElementSibling(element) {
+                while (element = element.nextSibling) {
+                    if (element.nodeType === 1) {
+                        return element
+                    }
+                }
+            }
+
+            var li = document.createElement("li") //创建元素节点
+            li.innerHTML = "abc"
+            div.appendChild(li) //给元素追加一个子元素节点
+            var li2 = document.createElement("li") //创建元素节点
+            li2.innerHTML = "123"
+            div.insertBefore(li2, div.children[0]) //给元素指定子元素前方插入一个自元素节点
+        }
+    </script>
+</head>
+
+<body>
+    <div>div</div>
+    <span>span</span>
+</body>
+
+</html>
