@@ -1,0 +1,39 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-11-07 16:44:08
+ * @LastEditTime: 2021-11-07 16:57:12
+ * @FilePath: \all\html\DOM\document元素操作.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            /*
+                三种创建元素方式的区别
+            */
+            var btn = document.querySelector("button")
+            btn.onclick = function() {
+                // 1、document.write("<div>你好</div>") //创建元素，会导致页面重绘
+                /*
+                    2、innerHTML 创建元素
+                        创建多个元素，耗时久，效率低
+                        使用数组，用join拼接，效率是三种创建元素里最高的
+                */
+                // 3、document.createElement() 创建元素，耗时少，效率高，创建多个元素，效率低于innerHTML
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button>点击</button>
+    <p>abc</p>
+</body>
+
+</html>
