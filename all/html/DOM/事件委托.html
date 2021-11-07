@@ -1,0 +1,47 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-11-07 20:27:49
+ * @LastEditTime: 2021-11-07 20:36:55
+ * @FilePath: \all\html\DOM\事件委托.html
+-->
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            var ul = document.querySelector("ul")
+            ul.addEventListener("click", function(e) {
+                // e.target   
+                e.target.style.backgroundColor = "pink"
+            })
+            document.addEventListener("contextmenu", function(e) {
+                e.preventDefault()
+            })
+            document.addEventListener("selectstart", function(e) {
+                e.preventDefault()
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li>li 一号</li>
+        <li>li 二号</li>
+        <li>li 三号</li>
+        <li>li 四号</li>
+        <li>li 五号</li>
+        <li>li 六号</li>
+        <li>li 七号</li>
+        <li>li 八号</li>
+        <li>li 九号</li>
+        <li>li 十号</li>
+    </ul>
+</body>
+
+</html>
