@@ -1,0 +1,100 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-11-06 17:51:25
+ * @LastEditTime: 2021-11-06 21:37:56
+ * @FilePath: \all\html\DOM\demo9.html
+-->
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        table {
+            width: 500px;
+            margin: 100px auto;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        
+        td,
+        th {
+            border: 1px solid #000;
+        }
+        
+        thead tr {
+            height: 40px;
+            background-color: #ccc;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var datas = [{
+                name: "小明",
+                subject: "javascript",
+                score: 100
+            }, {
+                name: "小王",
+                subject: "javascript",
+                score: 98
+            }, {
+                name: "小红",
+                subject: "javascript",
+                score: 99
+            }, {
+                name: "小丽",
+                subject: "javascript",
+                score: 88
+            }]
+            var tbody = document.querySelector("tbody")
+            for (var i = 0; i < datas.length; i++) {
+                var tr = document.createElement("tr")
+                tbody.appendChild(tr)
+
+                for (var k in datas[i]) {
+                    var td = document.createElement("td")
+                    tr.appendChild(td)
+                    td.innerHTML = datas[i][k]
+                }
+
+                var td = document.createElement("td")
+                tr.appendChild(td)
+                td.innerHTML = "<a href='javascript:;'>删除</a>"
+
+            }
+            var as = document.querySelectorAll("a")
+            for (let i = 0; i < as.length; i++) {
+                as[i].onclick = function() {
+                    tbody.removeChild(this.parentNode.parentNode)
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <table cellspacing="0">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>科目</th>
+                <th>成绩</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</body>
+
+</html>
