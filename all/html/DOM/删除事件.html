@@ -1,0 +1,47 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-11-07 18:09:49
+ * @LastEditTime: 2021-11-07 18:23:15
+ * @FilePath: \all\html\DOM\删除事件.html
+-->
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            var btn = document.querySelectorAll("div")
+            btn[0].onclick = function() {
+                alert("1")
+                this.onclick = null
+            }
+
+
+            var a = function() {
+                alert("1")
+                btn[1].removeEventListener("click", a)
+            }
+            btn[1].addEventListener("click", a)
+        }
+    </script>
+    <style>
+        div {
+            background-color: pink;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+</body>
+
+</html>
