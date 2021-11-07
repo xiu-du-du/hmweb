@@ -1,0 +1,52 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-11-07 21:09:59
+ * @LastEditTime: 2021-11-07 21:35:23
+ * @FilePath: \all\html\DOM\键盘事件.html
+-->
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            /*
+                keyup 弹起
+
+
+                keydown 按下
+                keypress 按下
+                    区别：
+                        keypress不识别功能键
+
+                执行顺序：keydown --> keypress --> keyup
+            */
+
+            // document.addEventListener('keyup', function(e) {
+            //         console.log(e.code);
+            //     })
+            // document.addEventListener('keydown', function(e) {
+            //     console.log(e.code);
+            // })
+            // document.addEventListener('keypress', function(e) {
+            //     console.log(e.code);
+            // })
+            document.addEventListener("keyup", function(e) {
+                console.log(e.keyCode);
+                if (e.keyCode === 65) {
+                    alert("按的是a键")
+                }
+            })
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
