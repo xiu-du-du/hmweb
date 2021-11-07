@@ -1,0 +1,46 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-11-07 20:55:58
+ * @LastEditTime: 2021-11-07 21:08:11
+ * @FilePath: \all\html\DOM\鼠标坐标.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            // document.onclick = function(e) {
+            //     console.log(e.clientX);
+            //     console.log(e.clientY);
+            //     console.log("====");
+            //     console.log(e.pageX);
+            //     console.log(e.pageY);
+            //     console.log("====");
+            //     console.log(e.screenX);
+            //     console.log(e.screenY);
+            //     console.log("====");
+            // }
+            var img = document.querySelector("img")
+            document.addEventListener("mousemove", function(e) {
+                img.style.left = e.pageX - 35 + "px"
+                img.style.top = e.pageY - 40 + "px"
+            })
+        }
+    </script>
+    <style>
+        img {
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="./images/angel.gif" alt="">
+</body>
+
+</html>
