@@ -1,0 +1,47 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-11-08 18:23:42
+ * @LastEditTime: 2021-11-08 18:31:38
+ * @FilePath: \all\html\BOM\demo3.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.addEventListener('load', function() {
+            var btn = document.querySelector('button')
+            var time = 10
+            btn.addEventListener('click', function() {
+                btn.disabled = true
+                btn.innerHTML = "还剩下" + time + "秒"
+                var timer = setInterval(() => {
+                    if (time == 0) {
+                        btn.disabled = false
+                        clearInterval(timer)
+                        btn.innerHTML = "发送"
+
+                    } else {
+                        btn.innerHTML = "还剩下" + time + "秒"
+                        time--
+                    }
+                }, 1000);
+
+
+            })
+
+        })
+    </script>
+</head>
+
+<body>
+    手机号码 :
+    <input type="text">
+    <button>发送</button>
+</body>
+
+</html>
