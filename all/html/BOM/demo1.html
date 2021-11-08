@@ -1,7 +1,7 @@
 <!--
  * @Author: xiuxiu
  * @Date: 2021-11-08 17:31:58
- * @LastEditTime: 2021-11-08 17:34:47
+ * @LastEditTime: 2021-11-08 17:40:56
  * @FilePath: \all\html\BOM\demo1.html
 -->
 <!DOCTYPE html>
@@ -15,15 +15,20 @@
     <script>
         window.addEventListener("load", () => {
             var ad = document.querySelector("img")
-            setTimeout(() => {
+            var timer = setTimeout(() => {
                 ad.style.display = "none"
             }, 5000);
+            var btn = document.querySelector("button")
+            btn.addEventListener("click", function() {
+                clearTimeout(timer) //停止计时器
+            })
         })
     </script>
 </head>
 
 <body>
     <img src="./images/ad.jpg" alt="">
+    <button>停止</button>
 </body>
 
 </html>
