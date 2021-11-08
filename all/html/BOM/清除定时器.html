@@ -1,0 +1,39 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-11-08 18:10:31
+ * @LastEditTime: 2021-11-08 18:14:25
+ * @FilePath: \all\html\BOM\清除定时器.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.addEventListener('load', function() {
+            var begin = document.querySelector(".begin")
+            var stop = document.querySelector(".stop")
+            var timer = null;
+            begin.addEventListener('click', function() {
+                timer = setInterval(() => {
+                    console.log("开启定时器");
+                }, 1000);
+
+            })
+            stop.addEventListener('click', function() {
+                clearInterval(timer)
+            })
+
+        })
+    </script>
+</head>
+
+<body>
+    <button class="begin">开启定时器</button>
+    <button class="stop">关闭定时器</button>
+</body>
+
+</html>
