@@ -1,0 +1,59 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-11-07 23:49:00
+ * @LastEditTime: 2021-11-08 00:09:23
+ * @FilePath: \all\html\BOM\bom.html
+-->
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //窗口加载完后执行
+        window.onload = function() {
+
+        }
+
+        //dom加载完后执行
+        document.addEventListener('DOMContentLoaded', function(e) {
+            // alert(123)
+        })
+
+        /* 
+            区别：
+                load    等页面全部加载完毕，包含页面dom元素、图片、flash、css等。
+                DOMContentLoaded    是DOM加载完毕，不包含图片、flash、css等就会执行，加载速度快一些
+        */
+
+
+        window.addEventListener('load', function() {
+            var div = document.querySelector("div")
+            window.addEventListener('resize', function() {
+                if (window.innerWidth <= 700) {
+                    div.style.display = "none"
+                } else {
+                    div.style.display = "block"
+                }
+
+            })
+
+        })
+    </script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>
