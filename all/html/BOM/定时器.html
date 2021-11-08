@@ -1,11 +1,11 @@
 <!--
  * @Author: xiuxiu
  * @Date: 2021-11-08 16:41:34
- * @LastEditTime: 2021-11-08 16:41:34
+ * @LastEditTime: 2021-11-08 17:28:28
  * @FilePath: \all\html\BOM\定时器.html
 -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 
 <head>
     <meta charset="UTF-8">
@@ -14,7 +14,12 @@
     <title>Document</title>
     <script>
         window.onload = function() {
-
+            function fn() {
+                console.log("计时器");
+            }
+            setTimeout(fn, 3000);
+            // 回调函数，需要等待时间过去了才调用函数。
+            // element.onclick=function(){} 和 element.addEventListener("click",function(){})里面的函数都是回调函数
         }
     </script>
 </head>
