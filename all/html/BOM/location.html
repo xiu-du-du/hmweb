@@ -1,0 +1,42 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-11-08 20:54:05
+ * @LastEditTime: 2021-11-08 23:18:36
+ * @FilePath: \all\html\BOM\location.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.addEventListener('load', function() {
+            // location.href = "http://www.baidu.com"
+            var time = 5
+            var div = document.querySelector("div")
+            var btn = document.querySelector("button")
+            btn.addEventListener("click", function() {
+                setInterval(() => {
+                    if (time == 0) {
+                        location.href = "http://www.baidu.com"
+                    } else {
+                        div.innerHTML = "还剩" + time + "秒跳转"
+                        time--
+                    }
+                }, 1000);
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <button>点击</button>
+    <div>
+
+    </div>
+</body>
+
+</html>

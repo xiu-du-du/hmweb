@@ -1,0 +1,33 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-11-08 23:57:10
+ * @LastEditTime: 2021-11-09 00:04:19
+ * @FilePath: \all\html\BOM\history对象\list.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.addEventListener('load', () => {
+            console.log(history);
+            var btn = document.querySelector("button")
+            btn.addEventListener('click', () => {
+                // history.back()
+                history.go(-1)
+
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <a href="./index.html">去首页</a>
+    <button>后退</button>
+</body>
+
+</html>

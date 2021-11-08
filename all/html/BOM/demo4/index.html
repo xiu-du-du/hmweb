@@ -1,0 +1,29 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-11-08 23:22:52
+ * @LastEditTime: 2021-11-08 23:33:19
+ * @FilePath: \all\html\BOM\demo4\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.addEventListener('load', function() {
+            var div = document.querySelector("div")
+            var text = location.search.substr(1)
+            var arr = text.split("=")
+            div.innerHTML = arr[1] + "，欢迎您！"
+        })
+    </script>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>
