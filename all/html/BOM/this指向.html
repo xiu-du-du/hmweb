@@ -1,0 +1,61 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-11-08 18:50:54
+ * @LastEditTime: 2021-11-08 18:57:04
+ * @FilePath: \all\html\BOM\this指向.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.addEventListener('load', function() {
+            //1.全局作用域或普通函数中，this指向全局对象，也就是window（定时器里面的this指向window）
+            console.log(this);
+
+            function fn() {
+                console.log(this);
+            }
+            fn()
+
+            setTimeout(() => {
+                console.log(this);
+            }, 1000);
+
+
+
+            //2.在方法中，谁调用这个方法，this就指向谁
+            var obj = {
+                sayHi: function() {
+                    console.log(this);
+                }
+            }
+            obj.sayHi()
+
+            var btn = document.querySelector("button")
+            btn.onclick = function() {
+                console.log(this);
+            }
+
+
+
+            //3.构造函数中this指向构造函数的实例
+            function Fun() {
+                console.log(this);
+            }
+            var fun = new Fun()
+        })
+    </script>
+</head>
+
+<body>
+    <button>点击</button>
+</body>
+
+</html>
+
+</html>
