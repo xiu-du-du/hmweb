@@ -1,0 +1,42 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-11-10 11:03:11
+ * @LastEditTime: 2021-11-10 11:06:34
+ * @FilePath: \all\html\BOM\可视区.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.addEventListener('load', function() {
+            var div = document.querySelector('div')
+
+            //获取元素边框的大小
+            console.log(div.clientTop);
+            console.log(div.clientLeft);
+
+            //获取宽度和高度，和offset区别是，client不包含边框
+            console.log(div.clientWidth);
+            console.log(div.clientHeight);
+
+        })
+    </script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>
