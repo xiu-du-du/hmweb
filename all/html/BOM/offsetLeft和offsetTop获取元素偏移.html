@@ -1,0 +1,66 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-11-09 19:12:56
+ * @LastEditTime: 2021-11-10 09:31:57
+ * @FilePath: \all\html\BOM\offsetLeft和offsetTop获取元素偏移.html
+-->
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            position: relative;
+        }
+        
+        .son {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            margin-left: 45px;
+            border: 10px solid red;
+            padding: 10px;
+        }
+    </style>
+    <script>
+        window.addEventListener('load', () => {
+            var father = document.querySelector(".father")
+            var son = document.querySelector(".son")
+            console.log(father.offsetTop);
+            console.log(father.offsetLeft);
+
+            //父元素没有定位，则以body为准
+            console.log(son.offsetTop);
+            console.log(son.offsetLeft);
+
+            //返回带有定位的父元素，父元素没定位则继续找其他带定位的祖先元素，都没有就返回body
+            console.log(son.offsetParent);
+            //返回父元素
+            console.log(son.parentNode);
+
+            //得到宽度高度,只能获取不能改变
+            //用于获取
+            console.log(son.offsetWidth);
+            console.log(son.offsetHeight);
+            //获得行内样式宽度高度，可以改变
+            //用于修改
+            console.log(father.style.width);
+            console.log(father.style.height);
+        })
+    </script>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+</body>
+
+</html>
