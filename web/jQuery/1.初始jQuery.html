@@ -1,8 +1,8 @@
 <!--
  * @Author: xiuxiu
  * @Date: 2021-11-11 19:10:31
- * @LastEditTime: 2021-11-11 19:32:05
- * @FilePath: \web\jQuery\test.html
+ * @LastEditTime: 2021-11-11 19:49:09
+ * @FilePath: \web\jQuery\1.初始jQuery.html
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -27,9 +27,12 @@
     </script>
     <script src="./js/jquery-1.10.1.js"></script>
     <script>
+        //页面加载完成的回调函数
         $(function() {
+            //获取到按钮后，给按钮添加点击事件
             $('#btn2').click(function() {
-                alert($('#userName')[0].value)
+                //获取输入框，然后将输入框的value弹出
+                alert($('#userName').val())
             })
         })
     </script>
