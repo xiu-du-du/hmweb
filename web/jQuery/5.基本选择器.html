@@ -1,0 +1,81 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-11-11 22:30:25
+ * @LastEditTime: 2021-11-11 23:19:50
+ * @FilePath: \web\jQuery\5.基本选择器.html
+-->
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="div1" class="box">div1(class="box")</div>
+    <div id="div2" class="box">div2(class="box")</div>
+    <div id="div3">div3</div>
+    <span class="box">span(class="box")</span>
+
+    <br>
+    <ul>
+        <li>AAAAA</li>
+        <li title="hello">BBBBB(title="hello")</li>
+        <li title="qwe">BBBBB(title="qwe")</li>
+        <li class="box">CCCCC(class="box")</li>
+        <li title="hello">DDDDDD(title="hello")</li>
+        <span>abcdefghijklmnopqrstuvwxyz</span>
+        <li style="display:none">我本来是隐藏的</li>
+    </ul>
+    <script src="./js/jquery-1.10.1.js"></script>
+    <script>
+        $(function() {
+            //内置隐式遍历，执行统一操作
+            // $("div").css("background", 'pink')
+
+            //
+            // $(".box").css("background", "red")
+
+            //
+            // $("div,span").css("background", 'skyblue')
+
+            //
+            // $('div.box').css("background", 'pink')
+
+            // $('ul li').css("background", 'pink')
+
+            // $('ul>span').css('background', 'pink')
+
+            //
+            // $('.box~li').css("background", 'pink')
+
+            // $('div:first').css('background', 'pink')
+
+            // $('.box:last').css('background', 'pink')
+
+            // $('div:not(.box)').css("background", 'pink')
+
+            // $('li:eq(1),li:eq(2)').css('background', 'pink')
+            // $('li:gt(0):lt(3)').css('background', 'red') //jQuery中的选择器是从左到右依次执行 ，每次都是用上一次筛选过后的集合再执行下一个选择器
+            // $('li:lt(3):gt(0)').css('background', 'red')
+
+            // $('li:contains(BBBBB)').css('background', 'pink') //包含指定内容就算
+
+            // $('li:hidden').css('background', 'pink')
+            // $('li:hidden').show(1000)//显示隐藏元素
+
+            // $('li[title]').css('background', 'pink')//有title属性的就算
+
+            // $('li[title="hello"]').css('background', 'pink')
+
+            // $('li[title]:not([title=hello])').css('background', 'pink')
+            $('li[title][title!=hello]').css('background', 'pink')
+
+        })
+    </script>
+</body>
+
+</html>
