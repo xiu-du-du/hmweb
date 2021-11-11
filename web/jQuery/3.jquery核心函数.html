@@ -1,7 +1,7 @@
 <!--
  * @Author: xiuxiu
  * @Date: 2021-11-11 19:42:16
- * @LastEditTime: 2021-11-11 19:42:16
+ * @LastEditTime: 2021-11-11 21:42:54
  * @FilePath: \web\jQuery\3.jquery核心函数.html
 -->
 <!DOCTYPE html>
@@ -15,9 +15,38 @@
 </head>
 
 <body>
-    <button id="btn">测试</button><br><br>
-    <input type="text" name="" id=""><br><br>
-    <input type="text" name="" id=""><br><br>
+    <div class="box">
+        <button id="btn">测试</button><br>
+        <input type="text" name="" id="msg1"><br>
+        <input type="text" name="" id="msg2"><br>
+    </div>
+    <div></div>
+    <script src="./js/jquery-1.10.1.js"></script>
+    <script>
+        $(function() {
+            $('#btn').click(function() {
+                //参数为dom对象，将dom对象转换成jQuery对象返回
+                // alert($(this).html())
+                // $('<input type="text" name="" id="msg3"><br>').appendTo($('.box'))
+                $('<input type="text" name="" id="msg3"><br>').appendTo($('div'))
+            })
+
+            let arr = [4, 7, 3, 1, 6]
+                //遍历数组，回调函数中第一个参数对应索引，第二个参数对应当前元素的值
+            $.each(arr, function(index, item) {
+                console.log(index, item);
+            });
+
+            /*      原生forEach    */
+            // arr.forEach(function(item, index) {
+            //     console.log(item, index);
+            // })
+
+            var str = ' my atguigu '
+            console.log(str.trim());
+            console.log($.trim(str));
+        })
+    </script>
 </body>
 
 </html>
