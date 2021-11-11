@@ -1,0 +1,59 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-11-11 21:45:09
+ * @LastEditTime: 2021-11-11 22:21:48
+ * @FilePath: \web\jQuery\4.jQuery对象.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>测试一</button>
+    <button>测试二</button>
+    <button id="btn3">测试三</button>
+    <button>测试四</button>
+    <script src="./js/jquery-1.10.1.js"></script>
+    <script>
+        $(function() {
+            //返回伪数组
+            //获取长度
+            var $btns = $('button')
+            console.log($btns.length);
+            console.log($btns.size());
+
+            //取出第二个按钮的文本
+            /*
+                dom和jquery互转
+                dom对象 => jQuery对象：
+                    将dom对象传入jQuery核心函数，返回封装好的jQuery对象  例如：$(this)
+                jQuery对象 => dom对象：
+                    只要是访问个体的情况下，拿到的都是jQuery对象这个伪数组对象中存储的dom对象
+            */
+            console.log($btns[1].innerHTML);
+            // console.log($btns.eq(1).html());
+
+            //输出所有button标签的文本
+            /*
+                jQuery对象上的each方法的回调函数中，this直接指向当前的遍历目标
+            */
+            $btns.each(function(index, item) {
+                // console.log(index, item);
+                console.log(this.innerHTML);
+            })
+
+            //输出 '测试三' 按钮时所有按钮中的第几个
+            console.log($("#btn3").index()); //返回当前元素在同级元素中的所有
+        })
+    </script>
+</body>
+
+</html>
+
+</html>
