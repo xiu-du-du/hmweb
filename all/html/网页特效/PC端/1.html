@@ -1,0 +1,179 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-11-10 20:04:08
+ * @LastEditTime: 2021-11-10 23:06:27
+ * @FilePath: \all\html\网页特效\PC端\1.html
+-->
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // var x = 1
+
+        // function fn(n) {
+        //     n = n + 1
+        // }
+        // var y = fn(x)
+        // console.log(y);
+
+        // var a = 10;　　
+        // function test() {　　
+        //     var a;　
+        //     a = 100;　　
+        //     alert(a);　　
+        //     alert(this.a);　　
+        //     alert(a);　　
+        // }　　
+        // test();
+        // fn1();　　
+        // var fn1 = function(a) {
+        //     alert(a);
+        // }
+        // var a = 100;　　
+        // function fn1() {　
+        //     var a　
+        //     alert(a);　　
+        //     a = 10;　　
+        // }　　
+        // alert(fn1());
+        // var foo = 1;
+        // (function() {  
+        //     console.log(foo);  
+        //     var foo = 2;  
+        //     console.log(foo);
+        // })();
+        // function Dog() {
+        //     this.name = '小黑'
+        // }
+        // var dog1 = new Dog();
+        // var User = {
+        //     count: 1,
+        //     getCount: function() {
+        //         return this.count;
+        //     }
+        // }
+        // console.log(User.getCount());
+        // var func = User.getCount;
+        // console.log(func());
+        // var x = 5;
+        // (function() {
+        //     console.log(x);
+        //     var x = 10;
+        //     console.log(x);
+        // }());
+        // function employee(name, code) {
+        //     this.name = "wangli";
+        //     this.code = "A001";
+        // }
+        // var newemp = new employee("zhangming", 'A002');
+        // document.write("雇员姓名:" + newemp.name + " ");
+        // document.write("雇员代号:" + newemp.code + " ");
+        // function Person(firstName, lastName) {
+        //     this.firstName = firstName;
+        //     this.lastName = lastName;
+        // }
+        // const lydia = new Person("Lydia", "Hallie");
+        // const sarah = Person("Sarah", "Smith");
+        // console.log(lydia);
+        // console.log(sarah);
+        // function checkAge(data) {
+        //     if (data === {
+        //             age: 18
+        //         }) {
+        //         console.log("You are an adult!");
+        //     } else if (data == {
+        //             age: 18
+        //         }) {
+        //         console.log("You are still an adult.");
+        //     } else {
+        //         console.log(`Hmm.. You don't have an age I guess`);
+        //     }
+        // }
+        // checkAge({
+        //     age: 18
+        // });
+        // function sayHi() {
+        //     console.log(name);
+        //     console.log(age);
+        //     var name = "Lydia";
+        //     let age = 21;
+        // }
+        // sayHi();
+        // for (var i = 0; i < 3; i++) {
+        //     setTimeout(() => console.log(i), 1);
+        // }
+        // for (let i = 0; i < 3; i++) {
+        //     setTimeout(() => console.log(i), 1);
+        // }
+
+        // const shape = {
+        //     radius: 10,
+        //     diameter() {
+        //         return this.radius * 2;
+        //     },
+        //     perimeter: () => 2 * Math.PI * this.radius
+        // };
+        // console.log(shape.diameter());
+        // console.log(shape.perimeter());;
+        // function checkAge(data) {
+        //     if (data === {
+        //             age: 18
+        //         }) {
+        //         console.log("You are an adult!");
+        //     } else if (data == {
+        //             age: 18
+        //         }) {
+        //         console.log("You are still an adult.");
+        //     } else {
+        //         console.log(`Hmm.. You don't have an age I guess`);
+        //     }
+        // }
+        // var a = {
+        //     age: 18
+        // }
+        // checkAge(a);
+        // var a = 3
+        // var b = a
+        // a = 4
+        // console.log(a, b);
+
+        // function sayHi() {
+        //     return (() => 0)();
+        // }
+        // console.log(typeof sayHi());;
+        // let c = {
+        //     greeting: "Hey!"
+        // };
+        // let d;
+        // d = c;
+        // c.greeting = "Hello";
+        // console.log(d.greeting);
+        // let a = 3;
+        // let b = new Number(3);
+        // let c = 3;
+        // console.log(a == b);
+        // console.log(a === b);
+        // console.log(b === c);
+        // let greeting;
+        // greetign = {};
+        // console.log(greetign);
+        function Person(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+        }
+        const member = new Person("Lydia", "Hallie");
+        Person.getFullName = () => this.firstName + this.lastName;
+        console.log(member.getFullName());
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
