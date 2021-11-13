@@ -1,0 +1,53 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-11-13 17:11:09
+ * @LastEditTime: 2021-11-13 17:59:14
+ * @FilePath: \all\html\vue\08_计算属性\3.姓名案例_计算属性实现.html
+-->
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        姓：<input type="text" v-model="firstName">
+        <br> 名：<input type="text" v-model="lastName">
+        <br> 全名：<span>{{fullName}}</span>
+    </div>
+</body>
+<script>
+    Vue.config.productionTip = false
+    const vm = new Vue({
+        el: '#root',
+        data: {
+            firstName: '张',
+            lastName: '三'
+        },
+        computed: {
+            fullName: {
+                //get调用时机：
+                // 1、初次读取fullName
+                // 2、所依赖的数据发生变化时
+                get() {
+                    // console.log('get', this); //this指向vm
+                    return this.firstName + "-" + this.lastName
+                },
+                //set调用时机
+                // 当fullName被修改时
+                set(value) {
+                    this.firstName = value.split('-')[0]
+                    this.lastName = value.split('-')[1]
+                }
+            }
+        }
+    })
+</script>
+
+</html>

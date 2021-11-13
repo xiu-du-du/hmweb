@@ -1,0 +1,53 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-11-13 16:38:08
+ * @LastEditTime: 2021-11-13 16:59:07
+ * @FilePath: \all\html\vue\07_事件处理\3.键盘事件.html
+-->
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <h2>欢迎{{name}}</h2>
+        <!-- 
+
+            特殊：
+                tab键   需要配合keydown使用
+
+                系统修饰键：
+                    按下的同时，再次按下其他按键，释放其他键，事件才会触发
+                    ctrl键  keyup和keydown都可以用
+                    alt键   keyup和keydown都可以用
+                    shift键 keyup和keydown都可以用
+                    meta键  keyup和keydown都可以用
+        -->
+        <input type="text" placeholder="按下回车提示输入" @keyup.ctrl='showInfo'>
+    </div>
+    <script>
+        Vue.config.productionTip = false
+        new Vue({
+            el: '#root',
+            data: {
+                name: 'jack',
+            },
+            methods: {
+                showInfo(e) {
+                    // if (e.keyCode != 13) return
+                    console.log(e.key + " " + e.keyCode);
+                    console.log(e.target.value);
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>
