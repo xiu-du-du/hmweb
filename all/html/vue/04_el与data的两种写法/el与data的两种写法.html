@@ -1,7 +1,7 @@
 <!--
  * @Author: xiuxiu
  * @Date: 2021-11-13 13:24:40
- * @LastEditTime: 2021-11-13 13:40:52
+ * @LastEditTime: 2021-11-13 13:42:26
  * @FilePath: \all\html\vue\04_el与data的两种写法\el与data的两种写法.html
 -->
 <!DOCTYPE html>
@@ -39,6 +39,7 @@
             //     name: 'jack'
             // }
             data() {
+                //由vue管理的函数不能写成箭头函数
                 console.log(this); //this指向vue的实例对象
                 return {
                     name: 'jack'
