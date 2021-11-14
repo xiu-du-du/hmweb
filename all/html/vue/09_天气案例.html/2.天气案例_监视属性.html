@@ -1,7 +1,7 @@
 <!--
  * @Author: xiuxiu
  * @Date: 2021-11-13 18:06:27
- * @LastEditTime: 2021-11-13 18:29:19
+ * @LastEditTime: 2021-11-14 18:48:07
  * @FilePath: \all\html\vue\09_天气案例.html\2.天气案例_监视属性.html
 -->
 <!DOCTYPE html>
@@ -42,12 +42,15 @@
                 this.isHot = !this.isHot
             }
         },
+
+        //监视
         watch: {
             isHot: {
+                immediate: true,
                 //handler调用时机
                 // 当isHot被改变时
-                handler() {
-                    console.log(this.isHot);
+                handler(newValue, oldValue) {
+                    console.log("isHot", newValue, oldValue);
                 }
             }
         },
