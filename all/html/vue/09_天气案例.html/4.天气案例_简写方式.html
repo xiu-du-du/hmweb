@@ -1,7 +1,7 @@
 <!--
  * @Author: xiuxiu
  * @Date: 2021-11-15 02:21:00
- * @LastEditTime: 2021-11-15 02:22:09
+ * @LastEditTime: 2021-11-15 02:28:35
  * @FilePath: \all\html\vue\09_天气案例.html\4.天气案例_简写方式.html
 -->
 <!DOCTYPE html>
@@ -41,12 +41,33 @@
 
         },
         watch: {
-            'isHot': {
-                handler(newValue, oldValue) {
-                    console.log('isHot', newValue, oldValue)
-                }
-            }
+            // 'isHot': {
+            //     immediate: true, //初始化让handler调用一下
+            //     // deep: true, //开启深度监视（多层级用）
+            //     handler(newValue, oldValue) {
+            //         console.log('isHot', newValue, oldValue)
+            //     }
+            // }
+
+            /* 简写 */
+            // isHot(newValue, oldValue) {
+            //     console.log('isHot', newValue, oldValue)
+            // }
         },
+    })
+
+    /* 正常写法 */
+    // vm.$watch('isHot', {
+    //     immediate: true, //初始化让handler调用一下
+    //     deep: true, //开启深度监视（多层级用）
+    //     handler(newValue, oldValue) {
+    //         console.log('isHot', newValue, oldValue)
+    //     }
+    // })
+
+    /* 简写 */
+    vm.$watch('isHot', function(newValue, oldValue) {
+        console.log('isHot', newValue, oldValue)
     })
 </script>
 
