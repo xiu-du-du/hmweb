@@ -1,6 +1,87 @@
 <!--
  * @Author: xiuxiu
  * @Date: 2021-11-15 02:56:49
- * @LastEditTime: 2021-11-15 02:56:49
+ * @LastEditTime: 2021-11-15 03:22:56
  * @FilePath: \all\html\vue\10_绑定样式\绑定样式.html
 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+    <style>
+        .basic {
+            height: 200px;
+            width: 200px;
+            border: 3px solid black;
+        }
+        
+        .red {
+            background-color: red;
+        }
+        
+        .blue {
+            background-color: blue;
+        }
+        
+        .pink {
+            background-color: pink;
+        }
+        
+        .orange {
+            background-color: orange;
+        }
+        
+        .fontStyle {
+            font-size: 28px;
+        }
+        
+        .boxStyle {
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root">
+        <!-- 字符串写法 -->
+        <div class="basic" :class='mood' @click='changeMood'>{{name}}</div>
+        <hr>
+        <!-- 数组写法 -->
+        <div class="basic" :class='classArr'>{{name}}</div>
+        <hr>
+        <!-- 对象写法 -->
+        <div class="basic" :class='classObj'>{{name}}</div>
+    </div>
+    <script>
+        Vue.config.productionTip = false
+        const vm = new Vue({
+            el: "#root",
+            data: {
+                name: 'test',
+                mood: 'normal',
+                classArr: ['fontStyle', 'orange', 'boxStyle'],
+                classObj: {
+                    orange: false,
+                    fontStyle: false,
+                    boxStyle: false
+                }
+            },
+            methods: {
+                changeMood() {
+                    const arr = ['red', 'blue', 'pink']
+                    this.mood = arr[Math.floor(Math.random() * 3)]
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>
+</body>
+
+</html>
