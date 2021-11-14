@@ -1,8 +1,8 @@
 <!--
  * @Author: xiuxiu
  * @Date: 2021-11-13 17:11:09
- * @LastEditTime: 2021-11-15 02:48:20
- * @FilePath: \all\html\vue\08_计算属性\4.姓名案例_计算属性简写.html
+ * @LastEditTime: 2021-11-15 02:45:29
+ * @FilePath: \all\html\vue\09_天气案例.html\5.姓名案例_watch实现.html
 -->
 <!DOCTYPE html>
 <html lang="zh">
@@ -28,13 +28,18 @@
         el: '#root',
         data: {
             firstName: '张',
-            lastName: '三'
+            lastName: '三',
+            fullName: '张-三'
         },
-        computed: {
-            //确定只读不改的时候才能用简写
-            fullName: function() {
-                return this.firstName + "-" + this.lastName
-            }
+        watch: {
+            firstName(newValue, oldValue) {
+                setTimeout(() => {
+                    this.fullName = newValue + '-' + this.lastName
+                }, 1000);
+            },
+            lastName(newValue, oldValue) {
+                this.fullName = this.firstName + '-' + newValue
+            },
         }
     })
 </script>
