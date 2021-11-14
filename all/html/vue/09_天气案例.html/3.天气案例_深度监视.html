@@ -1,7 +1,7 @@
 <!--
  * @Author: xiuxiu
  * @Date: 2021-11-13 18:06:27
- * @LastEditTime: 2021-11-15 02:10:42
+ * @LastEditTime: 2021-11-15 02:16:28
  * @FilePath: \all\html\vue\09_天气案例.html\3.天气案例_深度监视.html
 -->
 <!DOCTYPE html>
@@ -23,9 +23,9 @@
         <button @click='changeWeather'>切换</button>
         <hr>
         <h3>a的值是：{{numbers.a}}</h3>
-        <button @click="add">a+1</button>
+        <button @click="numbers.a++">a+1</button>
         <h3>b的值是：{{numbers.b}}</h3>
-        <button @click="add">b+1</button>
+        <button @click="numbers.b++">b+1</button>
     </div>
 
 </body>
@@ -38,7 +38,7 @@
             isHot: true,
             numbers: {
                 a: 1,
-                b: 1
+                b: 1,
             }
         },
         computed: {
@@ -50,24 +50,29 @@
             changeWeather() {
                 this.isHot = !this.isHot
             },
-            add() {
-                this.numbers.a++
-            }
+
         },
 
         //监视
         watch: {
             //监视多个属性中某个属性的变化
-            'numbers.a': {
-                immediate: true,
-                handler(newValue, oldValue) {
-                    console.log("a", newValue, oldValue);
-                }
-            },
-            'numbers.b': {
-                immediate: true,
-                handler(newValue, oldValue) {
-                    console.log("b", newValue, oldValue);
+            // 'numbers.a': {
+            //     immediate: true,
+            //     handler(newValue, oldValue) {
+            //         console.log("a", newValue, oldValue);
+            //     }
+            // },
+            // 'numbers.b': {
+            //     immediate: true,
+            //     handler(newValue, oldValue) {
+            //         console.log("b", newValue, oldValue);
+
+            //     }
+            // },
+            'numbers': {
+                deep: true,
+                handler() {
+                    console.log('numbers改变了')
                 }
             }
         },
