@@ -1,0 +1,37 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-11-18 19:50:27
+ * @LastEditTime: 2021-11-18 21:36:19
+ * @FilePath: \all\html\DOM\ceshi\1.html
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.addEventListener('load', function() {
+            let div = document.querySelector('#test')
+            console.log(div);
+            /* div.addEventListener('click', function() {
+                    console.log(this);
+                    console.log(arguments[0])
+
+                }) */
+            div.onclick = function() {
+                console.log(arguments[0])
+                console.log(this);
+            }
+
+        })
+    </script>
+</head>
+
+<body>
+    <div id="test" class="red">demo</div>
+</body>
+
+</html>
