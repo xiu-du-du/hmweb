@@ -1,7 +1,7 @@
 /*
  * @Author: xiuxiu
  * @Date: 2021-11-18 22:30:50
- * @LastEditTime: 2021-11-18 23:11:03
+ * @LastEditTime: 2021-11-18 23:17:14
  * @FilePath: \all\html\DOM\封装dom库\src\dom.js
  */
 window.dom = {
@@ -21,7 +21,7 @@ window.dom = {
     },
     // 添加一个儿子
     append(parent, child) {
-        parent.appendChild(node)
+        parent.appendChild(child)
     },
     // 添加一个父亲
     wrap(node, parent) {

@@ -1,12 +1,11 @@
 /*
  * @Author: xiuxiu
  * @Date: 2021-11-18 22:14:59
- * @LastEditTime: 2021-11-18 23:05:42
+ * @LastEditTime: 2021-11-18 23:16:08
  * @FilePath: \all\html\DOM\封装dom库\src\main.js
  */
 // const div = dom.create('<div><span>222</span></div>')
-const test = document.querySelector('#test')
-console.log(test);
 const div = dom.create('<div>newDiv</div>')
 dom.after(test, div)
-console.log(div);
+const div3 = dom.create('<div id="parent">parent</div>')
+dom.wrap(test, div3)
