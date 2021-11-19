@@ -1,7 +1,7 @@
 /*
  * @Author: xiuxiu
  * @Date: 2021-11-18 22:30:50
- * @LastEditTime: 2021-11-18 23:17:14
+ * @LastEditTime: 2021-11-19 11:18:17
  * @FilePath: \all\html\DOM\封装dom库\src\dom.js
  */
 window.dom = {
@@ -28,4 +28,8 @@ window.dom = {
         dom.before(node, parent)
         dom.append(parent, node)
     },
+    remove(node) {
+        node.parentNode.removeChild(node)
+        return node
+    }
 }
