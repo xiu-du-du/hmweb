@@ -1,7 +1,7 @@
 /*
  * @Author: xiuxiu
  * @Date: 2021-11-18 22:30:50
- * @LastEditTime: 2021-11-19 11:18:17
+ * @LastEditTime: 2021-11-19 11:36:53
  * @FilePath: \all\html\DOM\封装dom库\src\dom.js
  */
 window.dom = {
@@ -28,8 +28,24 @@ window.dom = {
         dom.before(node, parent)
         dom.append(parent, node)
     },
+    // 删除节点
     remove(node) {
+        // node.remove() 兼容不好
         node.parentNode.removeChild(node)
         return node
+    },
+    //删除节点所有子元素
+    empty(node) {
+        // node.innerHTML=''  
+
+        // const childNodes = node.childNodes
+        // const { childNodes } = node //简写
+
+        const arr = []
+        let x = node.firstChild
+        while (x) {
+            arr.push(dom.remove(node.firstChild))
+        }
+        return arr
     }
 }
