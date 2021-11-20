@@ -1,7 +1,7 @@
 /*
  * @Author: xiuxiu
  * @Date: 2021-11-20 22:13:39
- * @LastEditTime: 2021-11-20 23:43:56
+ * @LastEditTime: 2021-11-21 00:17:05
  * @FilePath: \all\html\ajax\原生ajax\server.js
  */
 // 1、引入express
@@ -54,6 +54,17 @@ app.get('/ie', (request, response) => {
 
     // 设置响应体
     response.send("HELLO ie -1")
+})
+
+// 延时响应
+app.get('/delay', (request, response) => {
+    // 设置响应头 设置允许跨域
+    response.setHeader('Access-Control-Allow-Origin', '*')
+    setTimeout(() => {
+        // 设置响应体
+        response.send("延时响应 ")
+    }, 3000);
+
 })
 
 // 4、监听端口服务

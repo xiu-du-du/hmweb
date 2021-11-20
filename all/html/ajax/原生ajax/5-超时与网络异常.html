@@ -1,7 +1,7 @@
 <!--
  * @Author: xiuxiu
  * @Date: 2021-11-20 23:50:51
- * @LastEditTime: 2021-11-20 23:54:06
+ * @LastEditTime: 2021-11-21 00:18:32
  * @FilePath: \all\html\ajax\原生ajax\5-超时与网络异常.html
 -->
 <!DOCTYPE html>
@@ -29,17 +29,29 @@
         const result = document.querySelector('#result')
         btn.onclick = function() {
             const xhr = new XMLHttpRequest()
-            xhr.open('GET', 'http://127.0.0.1:8000/server')
+
+            // 超时设置 2s
+            xhr.timeout = 2000
+
+            // 超时回调
+            xhr.ontimeout = function() {
+                alert("网络异常")
+            }
+
+            // 网络异常回调
+            xhr.onerror = function() {
+                alert('你的网络似乎出了些问题')
+            }
+
+            xhr.open('GET', 'http://127.0.0.1:8000/delay')
             xhr.send()
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === 4) {
                     if (xhr.status >= 200 && xhr.status < 300) {
-                        console.log(1);
+                        result.innerHTML = xhr.response
                     }
-
                 }
             }
-
         }
     </script>
 </body>
