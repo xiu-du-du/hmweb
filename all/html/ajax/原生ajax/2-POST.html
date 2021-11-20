@@ -1,0 +1,49 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-11-20 22:51:17
+ * @LastEditTime: 2021-11-20 23:05:22
+ * @FilePath: \all\html\ajax\原生ajax\2-POST.html
+-->
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX POST 请求</title>
+    <style>
+        #result {
+            width: 200px;
+            height: 100px;
+            border: 1px solid purple;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="result"></div>
+
+    <script>
+        const result = document.querySelector('#result')
+        result.addEventListener('mouseover', function() {
+            const xhr = new XMLHttpRequest()
+            xhr.open('POST', 'http://127.0.0.1:8000/server')
+
+            // 设置请求头
+            xhr.setRequestHeader("Content-Type", 'application/x-www-form-urlencoded')
+            xhr.setRequestHeader("name", 'xiuxiu')
+
+            xhr.send('a=100&b=200&c=300')
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                        result.innerHTML = xhr.response
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
