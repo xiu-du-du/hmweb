@@ -1,0 +1,38 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-11-21 12:54:14
+ * @LastEditTime: 2021-11-21 13:01:24
+ * @FilePath: \all\html\ajax\jQuery-AJAX\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+</head>
+
+<body>
+    <h2>AAA</h2>
+    <button>获取用户数据</button>
+    <script>
+        const btn = document.querySelector('button')
+        btn.onclick = function() {
+            const xhr = new XMLHttpRequest()
+                // 满足同源策略，所以url可以简写
+            xhr.open('GET', '/data')
+            xhr.send()
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                        console.log(xhr.response);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
