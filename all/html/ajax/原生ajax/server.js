@@ -1,7 +1,7 @@
 /*
  * @Author: xiuxiu
  * @Date: 2021-11-20 22:13:39
- * @LastEditTime: 2021-11-21 00:17:05
+ * @LastEditTime: 2021-11-21 11:35:39
  * @FilePath: \all\html\ajax\原生ajax\server.js
  */
 // 1、引入express
@@ -66,6 +66,18 @@ app.get('/delay', (request, response) => {
     }, 3000);
 
 })
+
+// jquery 服务
+app.all('/jquery-server', (request, response) => {
+    response.setHeader('Access-Control-Allow-Origin', '*')
+
+    const data = { name: 'jack' }
+        // response.send("jquery ")
+    response.send(JSON.stringify(data))
+
+})
+
+
 
 // 4、监听端口服务
 app.listen(8000, () => {

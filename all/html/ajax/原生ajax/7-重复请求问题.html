@@ -1,0 +1,50 @@
+<!--
+ * @Author: xiuxiu
+ * @Date: 2021-11-21 00:26:18
+ * @LastEditTime: 2021-11-21 10:21:25
+ * @FilePath: \all\html\ajax\原生ajax\7-重复请求问题.html
+-->
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>取消请求</title>
+</head>
+
+<body>
+    <button>点击发送</button>
+    <script>
+        const btns = document.querySelectorAll('button')
+
+        let xhr = null
+
+        // 标识变量
+        let isSending = false // 是否正在发送ajax请求
+
+        btns[0].onclick = function() {
+            // 判断标识变量
+            if (isSending) xhr.abort()
+
+            xhr = new XMLHttpRequest()
+
+            // 修改 标识变量的值
+            isSending = true
+
+            xhr.open('GET', 'http://127.0.0.1:8000/delay')
+            xhr.send()
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                    isSending = false
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                        console.log(xhr.response);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
