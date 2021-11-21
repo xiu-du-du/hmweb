@@ -1,7 +1,7 @@
 /*
  * @Author: xiuxiu
  * @Date: 2021-11-20 22:13:39
- * @LastEditTime: 2021-11-21 11:35:39
+ * @LastEditTime: 2021-11-21 12:00:32
  * @FilePath: \all\html\ajax\原生ajax\server.js
  */
 // 1、引入express
@@ -70,11 +70,20 @@ app.get('/delay', (request, response) => {
 // jquery 服务
 app.all('/jquery-server', (request, response) => {
     response.setHeader('Access-Control-Allow-Origin', '*')
+    response.setHeader('Access-Control-Allow-Headers', '*')
 
     const data = { name: 'jack' }
         // response.send("jquery ")
     response.send(JSON.stringify(data))
 
+})
+
+// axios 服务
+app.all('/axios-server', (request, response) => {
+    response.setHeader('Access-Control-Allow-Origin', '*')
+    response.setHeader('Access-Control-Allow-Headers', '*')
+    const data = { name: 'jack' }
+    response.send(JSON.stringify(data))
 })
 
 
